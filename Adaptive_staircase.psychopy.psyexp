@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2024.1.5">
+<PsychoPy2experiment encoding="utf-8" version="2024.2.1post4">
   <Settings>
     <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
     <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
@@ -34,6 +34,8 @@
     <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
     <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+    <Param val="warning" valType="code" updates="None" name="consoleLoggingLevel"/>
+    <Param val="default" valType="str" updates="None" name="ecSampleRate"/>
     <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
     <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
     <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
@@ -87,6 +89,7 @@
         <Param val="" valType="str" updates="constant" name="desc"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
         <Param val="trial" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="constant" name="skipIf"/>
@@ -99,8 +102,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((Math.random() &gt; 0.5)) {&amp;#10;    directions = (- level);&amp;#10;    corr_res = &quot;left&quot;;&amp;#10;} else {&amp;#10;    directions = level;&amp;#10;    corr_resp = &quot;right&quot;;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if random()&gt;0.5: #50:50 possibility&amp;#10; directions = -level&amp;#10; corr_res = 'left'&amp;#10;else:&amp;#10;   directions = level&amp;#10;   corr_resp = 'right'" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if ((Math.random() &gt; 0.5)) {&amp;#10;    directions = (- level);&amp;#10;    corr_res = &quot;left&quot;;&amp;#10;} else {&amp;#10;    direction = level;&amp;#10;    corr_resp = &quot;right&quot;;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if random()&gt;0.5: #50:50 possibility&amp;#10; directions = -level&amp;#10; corr_res = 'left'&amp;#10;else:&amp;#10;   direction = level&amp;#10;   corr_resp = 'right'" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -116,6 +119,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="white" valType="color" updates="constant" name="fillColor"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
@@ -146,6 +150,7 @@
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="0.5" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="linear" valType="str" updates="constant" name="interpolate"/>
         <Param val="gauss" valType="file" updates="constant" name="mask"/>
@@ -200,7 +205,7 @@
       <Param name="loopType" updates="None" val="staircase" valType="str"/>
       <Param name="max value" updates="None" val="20" valType="num"/>
       <Param name="min value" updates="None" val="1" valType="num"/>
-      <Param name="nReps" updates="None" val="50" valType="num"/>
+      <Param name="nReps" updates="None" val="100" valType="num"/>
       <Param name="name" updates="None" val="stair" valType="code"/>
       <Param name="start value" updates="None" val="10" valType="num"/>
       <Param name="step sizes" updates="None" val="[2,1,1,0.5]" valType="list"/>
